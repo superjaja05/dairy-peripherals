@@ -1,0 +1,13 @@
+{
+	"parent": "block/cube",
+	"textures":
+	{
+		"particle": "dairyperipherals:block/picker_block",
+        "down": "dairyperipherals:block/picker_block",
+        "up": "dairyperipherals:block/picker_block",
+        "north": "dairyperipherals:block/picker_block",
+        "east": "dairyperipherals:block/picker_block",
+        "south": "dairyperipherals:block/picker_block",
+        "west": "dairyperipherals:block/picker_block"
+	}
+}
