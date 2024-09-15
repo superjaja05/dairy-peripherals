@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject
 object ModBlockEntities {
     val BLOCK_ENTITIES: DeferredRegister<BlockEntityType<*>> = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, "dairyperipherals")
 
-    val PICKER_BLOCK_ENTITY: RegistryObject<BlockEntityType<*>> = BLOCK_ENTITIES.register("picker_block") {
-        BlockEntityType.Builder.of(::PickerBlockEntity).build(null)
+    val PICKER_BLOCK_ENTITY = BLOCK_ENTITIES.register("picker_block") {
+        BlockEntityType.Builder.of(::PickerBlockEntity, ModBlocks.PICKER_PERIPHERAL.get()).build(null)
     }
 }
