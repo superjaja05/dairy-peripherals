@@ -1,6 +1,7 @@
 package jjs.dairyperipherals
 
 import dan200.computercraft.api.peripheral.IPeripheral
+import jjs.dairyperipherals.block.ModBlockEntities
 import jjs.dairyperipherals.block.ModBlocks
 import net.minecraft.client.Minecraft
 import net.minecraft.world.item.CreativeModeTabs
@@ -41,6 +42,7 @@ object DairyPeripherals {
         // Register the KDeferredRegister to the mod-specific event bus
         ModBlocks.BLOCKS.register(MOD_BUS)
         ModItems.ITEMS.register(MOD_BUS)
+        ModBlockEntities.BLOCK_ENTITIES.register(MOD_BUS)
 
         val obj = runForDist(
             clientTarget = {
