@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern":
+  [
+    "ILI",
+    "LGL",
+    "ILI"
+  ],
+
+  "key":
+  {
+    "I": { "tag": "forge:ingots/iron" },
+    "L": { "tag": "forge:gems/lapis" },
+    "G": { "tag": "forge:glass_panes/colorless" }
+  },
+
+  "result": { "item": "dairyperipherals:picker_block" }
+}

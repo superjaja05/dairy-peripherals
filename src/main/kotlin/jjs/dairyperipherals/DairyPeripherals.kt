@@ -18,6 +18,7 @@ import thedarkcolour.kotlinforforge.forge.MOD_BUS
 import thedarkcolour.kotlinforforge.forge.runForDist
 import jjs.dairyperipherals.item.ModItems
 import jjs.dairyperipherals.net.NetworkHandler
+import jjs.dairyperipherals.tabs.TabInit
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.level.block.Blocks
@@ -57,6 +58,7 @@ object DairyPeripherals {
         ModBlocks.BLOCKS.register(MOD_BUS)
         ModItems.ITEMS.register(MOD_BUS)
         ModBlockEntities.BLOCK_ENTITIES.register(MOD_BUS)
+        TabInit.register(MOD_BUS)
 
         val obj = runForDist(
             clientTarget = {
@@ -69,6 +71,7 @@ object DairyPeripherals {
             })
 
         MOD_BUS.addListener(this::setup)
+        MOD_BUS.addListener(TabInit::addCreative)
 
         println(obj)
     }
