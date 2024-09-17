@@ -12,8 +12,8 @@ object ModBlocks {
 
     // the returned ObjectHolderDelegate can be used as a property delegate
     // this is automatically registered by the deferred registry at the correct times
-    val PICKER_PERIPHERAL: RegistryObject<Block> = BLOCKS.register("picker_block") {
-        Block(BlockBehaviour.Properties.of()
+    val PICKER_PERIPHERAL: RegistryObject<PickerBlock> = BLOCKS.register("picker_block") {
+        PickerBlock(BlockBehaviour.Properties.of()
             .strength(3.0f)
             .sound(SoundType.METAL))
     }

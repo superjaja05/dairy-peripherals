@@ -3,6 +3,7 @@ package jjs.dairyperipherals
 import dan200.computercraft.api.peripheral.IPeripheral
 import jjs.dairyperipherals.block.ModBlockEntities
 import jjs.dairyperipherals.block.ModBlocks
+import jjs.dairyperipherals.client.ClientEventHandler
 import net.minecraft.client.Minecraft
 import net.minecraft.world.item.CreativeModeTabs
 import net.minecraft.world.item.ItemStack
@@ -16,9 +17,22 @@ import org.apache.logging.log4j.Logger
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 import thedarkcolour.kotlinforforge.forge.runForDist
 import jjs.dairyperipherals.item.ModItems
+import jjs.dairyperipherals.net.NetworkHandler
+import net.minecraft.world.entity.player.Player
+import net.minecraft.world.item.BlockItem
+import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.state.BlockState
+import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.common.capabilities.CapabilityManager
 import net.minecraftforge.common.capabilities.CapabilityToken
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent
+import net.minecraftforge.event.entity.player.PlayerEvent
+import net.minecraftforge.event.entity.player.PlayerInteractEvent
+import net.minecraftforge.eventbus.api.IEventBus
+import net.minecraftforge.eventbus.api.IEventListener
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
+import net.minecraftforge.fml.loading.FMLEnvironment
 
 /**
  * Main mod class. Should be an `object` declaration annotated with `@Mod`.
@@ -48,11 +62,13 @@ object DairyPeripherals {
             clientTarget = {
                 MOD_BUS.addListener(DairyPeripherals::onClientSetup)
                 Minecraft.getInstance()
+                (ClientEventHandler()::registerHandlers)()
             },
             serverTarget = {
                 MOD_BUS.addListener(DairyPeripherals::onServerSetup)
-                "test"
             })
+
+        MOD_BUS.addListener(this::setup)
 
         println(obj)
     }
@@ -71,6 +87,10 @@ object DairyPeripherals {
      */
     private fun onServerSetup(event: FMLDedicatedServerSetupEvent) {
         LOGGER.log(Level.INFO, "Server starting...")
+    }
+
+    private fun setup(event: FMLCommonSetupEvent) {
+        NetworkHandler.registerPackets()
     }
 }
 
