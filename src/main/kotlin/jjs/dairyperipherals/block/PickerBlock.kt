@@ -82,4 +82,21 @@ class PickerBlock(pProperties: Properties) : Block(pProperties), EntityBlock {
 
         return InteractionResult.PASS
     }
+
+    override fun onRemove(
+        pState: BlockState,
+        pLevel: Level,
+        pPos: BlockPos,
+        pNewState: BlockState,
+        pMovedByPiston: Boolean
+    ) {
+        if (pState.block != pNewState.block) {
+            val be: BlockEntity? = pLevel.getBlockEntity(pPos)
+            if (be is PickerBlockEntity) {
+                PickerBlockEntities.list.remove(be)
+                LOGGER.debug("Removed Picker at " + be.blockPos.toString() + " (Broken)")
+            }
+        }
+        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston)
+    }
 }
