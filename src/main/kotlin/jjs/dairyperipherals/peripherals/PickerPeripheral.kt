@@ -18,12 +18,10 @@ class PickerPeripheral(val be: PickerBlockEntity): IPeripheral {
     }
 
     override fun attach(computer: IComputerAccess) {
-        LOGGER.info("Picker Attached")
         computers.add(computer)
         super.attach(computer)
     }
     override fun detach(computer: IComputerAccess) {
-        LOGGER.info("Picker Detached")
         computers.remove(computer)
         super.detach(computer)
     }

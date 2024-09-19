@@ -62,21 +62,6 @@ class PickerBlock(pProperties: Properties) : Block(pProperties), EntityBlock {
 
             return InteractionResult.SUCCESS
         }
-        /*
-        if(pLevel.isClientSide())
-            return InteractionResult.SUCCESS
-        pPlayer.displayClientMessage(Component.literal("Right Clicked picker!"), false)
-        pPlayer.swing(InteractionHand.MAIN_HAND)
-        be.peripheral.ifPresent { peripheral ->
-            // Go through all connected computers
-            for(computer in peripheral.computers) {
-                // And on each computer queue new event
-                LOGGER.info(computer.toString())
-                computer.queueEvent("picker_use", username)
-                NetworkHandler.CHANNEL.sendToServer(PickerPacket("PICKED!!!"))
-            }
-        }
-        */
         if(pLevel.isClientSide())
             return InteractionResult.PASS
 

@@ -52,7 +52,7 @@ object DairyPeripherals {
     val LOGGER: Logger = LogManager.getLogger(ID)
 
     init {
-        LOGGER.log(Level.INFO, "Hello world!")
+        LOGGER.log(Level.INFO, "Mod Init")
 
         // Register the KDeferredRegister to the mod-specific event bus
         ModBlocks.BLOCKS.register(MOD_BUS)
