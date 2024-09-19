@@ -32,6 +32,7 @@ object TabInit {
     @SubscribeEvent
     fun addCreative(event: BuildCreativeModeTabContentsEvent) {
         if (event.tab === DAIRYPERIPHERALS_ITEMS.get()) {
+            event.accept(ModItems.DAIRY_CORE_ITEM.get())
             event.accept(ModItems.PICKER_PERIPHERAL_ITEM.get())
         }
     }

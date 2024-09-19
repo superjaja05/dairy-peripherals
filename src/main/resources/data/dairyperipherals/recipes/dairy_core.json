@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern":
+  [
+    "LGL",
+    "GMG",
+    "LGL"
+  ],
+
+  "key":
+  {
+    "M": { "item": "minecraft:milk_bucket" },
+    "L": { "tag": "forge:gems/lapis" },
+    "G": { "tag": "forge:ingots/gold" }
+  },
+
+  "result": { "item": "dairyperipherals:dairy_core" }
+}

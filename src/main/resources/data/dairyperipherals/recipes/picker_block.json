@@ -3,15 +3,15 @@
   "category": "misc",
   "pattern":
   [
-    "ILI",
-    "LGL",
-    "ILI"
+    "IGI",
+    "GCG",
+    "IGI"
   ],
 
   "key":
   {
     "I": { "tag": "forge:ingots/iron" },
-    "L": { "tag": "forge:gems/lapis" },
+    "C": { "item": "dairyperipherals:dairy_core" },
     "G": { "tag": "forge:glass_panes/colorless" }
   },
 
